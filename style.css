@@ -6,17 +6,10 @@ body {
 
 #logo {
     margin: 0px;
+    font-size: 2.5vw;
     padding: 8px;
-    font-family: "Fredoka One", sans-serif;
+    font-family: "Playfair Display", sans-serif;
     text-align: center;
-    text-shadow: 
-        0 0 45px #fff,   
-        0 0 45px #fff,  
-        0 0 45px #fff,  
-        0 0 45px white,
-        0 0 45px white,
-        0 0 45px white, 
-        0 0 45px white; 
 }
 
 ul {
@@ -24,8 +17,8 @@ ul {
 }
 
 body > header {
-    background-color: skyblue;
-    color:white;
+    background-color: #fcbba9;
+    color:black;
     display: flex;
     height: 12vh;
     align-items: center;
@@ -39,11 +32,60 @@ body > header {
 #nav-ul> li {
     padding: 8px;
     margin: 16px;
+    list-style: none;
 }
 
-body > header > nav > ul{
+/* General styling for the filter menu */
+.filter-section {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.filter-header {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 15vw;
+    display: flex;
+}
+
+.filter-header:hover {
+    background-color: #ddd;
+}
+
+/* Hide the dropdown by default */
+.dropdown {
+    display: none;
     list-style: none;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+/* Style the dropdown items */
+.dropdown li {
+    padding: 10px 0;
+    font-size: 16px;
+    margin: 15px;
+}
+
+.dropdown li a {
     text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    color: #007bff;
+}
+
+/* Show the dropdown when the filter is active */
+.active {
+    display: block;
 }
 
 .navbutton {
@@ -54,41 +96,150 @@ body > header > nav > ul{
     border-radius: 10px;
 }
 
-body > main article {
-    width: 70%;
-    margin: auto;
+
+/* Header styling */
+header {
+    position: relative;
+    width: 100%;
+    max-height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
 }
+
+/* Slideshow container */
+.slideshow-container {
+    margin-top: 25px;
+    width: 75%; /* Takes up the remaining space */
+    height: auto;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Container for slides to allow sliding effect */
+.slides-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 100%;
+}
+
+/* Each slide */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style for images */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation controls */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10; /* Ensures controls are above other elements */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 3px 0 0; /* Adjust corners if needed */
+}
+
+
+
 
 #main-content {
-    display: flex;    
-    justify-content: space-around;
+    display:flex;  
+    justify-content: space-between;
+    align-items: flex-start; /* Ensures both elements start at the top */
+    padding: 20px;
 }
 
+aside {
+    width: 20%; /* Adjust to your needs */
+}
+
+
 #main-content > div {
-    width: 80%;
+    width: 100%;
 }
-form {
-    text-align: center;
+
+
+.collapsible{
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
 }
+
+.active, .collapsible:hover {
+    background-color: #ddd;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.content p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+
+
+
+
 
 h2 {
     text-align: center;
+    margin: 20px;
 }
 
 body > footer {
-    background-color: skyblue;
-    color:white;
+    background-color: #fcbba9;
+    color:black;
     display: flex;
+    height: 20vh;
 
 }
 
 img {
-    border-radius: 50%;
+    border-radius: 0%;
 }
 
 #footer-ul {
     display: flex;
     list-style: none;
+    text-align: center;
+    margin-top: 15px;
 }
 
 #footer-ul > div > li {
@@ -96,6 +247,11 @@ img {
 }
 
 #footer-ul > div > li > a {
-    color: white;
+    color: black;
     text-decoration: none;
+}
+
+header, main, article, section {
+    width: 100%;
+    display: block;
 }
